@@ -15,9 +15,23 @@ console.table(activities);
 
 activities.forEach(function(elemento, indice, array){
 
-    console.log('indice -> ' + indice)
+   // console.log('indice -> ' + indice)
     elemento.forEach(function(elementoDos, indiceDos, arrayDos){
 
-        console.log('elemento -> ' + elementoDos)
+        //console.log('elemento -> ' + elementoDos)
     });
 });
+
+
+//While 
+
+let n = 0;
+let x = 0;
+
+while (n < 7){
+    n++;
+    x += n ;
+
+    console.log(n);
+}
+console.log('El valor de mi variable es : '+ x);

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+<body onload="javascript:colorBotonera(true);">
+        <div class="d-grid gap-2" id="botonera" >
+            <button id="1" class="btn" onclick="showList('btn1',true)" type="button">Mostrar</button>
+            <button id="2" class="btn " onclick="showList('btn1',false)"   type="button">Ocultar</button>
+            <button id="3" class="btn " type="button">Button Tres</button>
+            <button id="4" class="btn " type="button">Button Cuatro</button>
+        </div>
+        <div class="container d-none" id="btn1" style="margin-top: 20px; background-color: cadetblue; padding:20px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card" style="width: 18rem;">
+                        <rect width="100%" height="100%" fill="#868e96"></rect>
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="btn btn-primary">Go somewhere</a>
+                        </div>
+                      </div>
+                </div>
+            </div>
+        </div>
+<!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

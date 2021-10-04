@@ -1,8 +1,5 @@
 let mi_array = new Array ("btn-primary","btn-success","btn-danger","btn-info");
 
-
-  
-
 function colorBotonera( estado ){
     if (estado == true){
         let botonera = document.getElementsByClassName("btn"); //HTML Collctions

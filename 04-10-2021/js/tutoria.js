@@ -9,8 +9,7 @@ function colorCard( estado ){
     //console.log(count_array);
     var i = 0;
         array_botones.forEach(function(element,indice,array){
-              
-       
+
             if (estado == true){
                 element.classList.remove("btn-primary");
                 element.classList.add(array_colores[i]);

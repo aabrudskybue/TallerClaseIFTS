@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+
+    <title>Our superheroes</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Faster+One" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+
+      <header></header>
+
+      <section></section>
+
+    <script>
+        const headerTitle = document.querySelector('header');
+        const section = document.querySelector('section');
+        const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        const request = new XMLHttpRequest(); //instancian objeto 
+        request.open('GET', requestURL); // setean el método, la url de api
+        request.responseType = 'json'; //definen el tipo de dato que les devuelve
+        request.send();//envían la solicitud
+        request.onload = function (){ //esperan la respuesta
+            const superheroes = request.response; //reciben la respuesta
+            console.log(superheroes);
+            rellenarHeader(superheroes);
+            mostrarHeroes(superheroes.members);
+        }
+
+        function rellenarHeader(jsonObj){
+            let myH1 = document.createElement('h1');//<h1></h1>
+            myH1.textContent = jsonObj.squadName; // le agrego un texto
+            headerTitle.appendChild(myH1);// agregro el elemento al Html <header>
+
+            let myp = document.createElement('p');
+            myp.textContent = 'Hometown: ' + jsonObj.homeTown + ' // Formed: ' + jsonObj.formed;
+            headerTitle.appendChild(myp);
+        }
+
+        function mostrarHeroes(heroes){
+            for (i = 0; i < heroes.length; i++){
+                let myArticle = document.createElement('article');
+                let myH2 = document.createElement('h2');
+                let myp = document.createElement('p');
+                let myp1 = document.createElement('p');
+                let myp2 = document.createElement('p');
+                let myList = document.createElement('ul');
+
+                myH2.textContent = heroes[i].name;
+                myp.textContent = 'Identidad Secreta: ' + heroes[i].secretIdentity;
+                myp1.textContent = 'Edad: ' + heroes[i].age;
+                myp2.textContent = 'Super Poder: ';
+
+                myArticle.appendChild(myH2);
+                myArticle.appendChild(myp);
+                myArticle.appendChild(myp1);
+                myArticle.appendChild(myp2);
+                myArticle.appendChild(myList);
+                section.appendChild(myArticle);
+
+
+
+            }
+
+        }
+
+    </script>
+  </body>
+</html>

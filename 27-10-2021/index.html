@@ -11,38 +11,56 @@
 
   <body>
 
-      <header></header>
+      <header>
+        <h1 id="titulo"> MI TITULO </h1>
+        <p id="subtitulo"></p>
+      </header>
 
-      <section>
-
-      </section>
+      <section></section>
 
     <script>
         const headerTitle = document.querySelector('header');
         const section = document.querySelector('section');
         const requestURL = 'doc.json';
         const request = new XMLHttpRequest(); //instancian objeto 
+        var superHeroes = '';
         request.open('GET', requestURL); // setean el método, la url de api
         request.responseType = 'json'; //definen el tipo de dato que les devuelve
         request.send();//envían la solicitud
         request.onload = function (){ //esperan la respuesta
-            const superheroes = request.response; //reciben la respuesta
-            console.log(superheroes);
-            rellenarHeader(superheroes);
-            mostrarHeroes(superheroes.members);
+            superHeroes = request.response; //reciben la respuesta
+            console.log(superHeroes);
+            rellenarHeader();
+            mostrarHeroes();
         }
 
-        function rellenarHeader(jsonObj){
-            let myH1 = document.createElement('h1');//<h1></h1>
-            myH1.textContent = jsonObj.squadName; // le agrego un texto
-            headerTitle.appendChild(myH1);// agregro el elemento al Html <header>
+        function rellenarHeader(){
 
-            let myp = document.createElement('p');
-            myp.textContent = 'Hometown: ' + jsonObj.homeTown + ' // Formed: ' + jsonObj.formed;
-            headerTitle.appendChild(myp);
+          /**  METODO UNO */
+            //let myH1 = document.createElement('h1');//<h1></h1>
+           // myH1.textContent = superHeroes.squadName; // le agrego un texto
+           // headerTitle.appendChild(myH1);// agregro el elemento al Html <header>
+
+            //let myp = document.createElement('p');
+            //myp.textContent = 'Hometown: ' + superHeroes.homeTown + ' // Formed: ' + superHeroes.formed;
+            //headerTitle.appendChild(myp);
+
+          /**  METODO DOS */
+           /* let myTitle = "<h1>"+ superHeroes.squadName + "</h1>";
+            myTitle += "<p> Hometown:"+ superHeroes.homeTown ;
+            myTitle += " // Formed: " + superHeroes.formed + "</p>";
+            headerTitle.innerHTML = myTitle;*/
+
+          /**  METODO TRES */
+            let titulo = document.getElementById("titulo");
+            titulo.innerHTML = superHeroes.homeTown;
+            let subtitulo = document.getElementById("subtitulo");
+            subtitulo.innerHTML = "Hometown:" + superHeroes.homeTown + " // Formed: " + superHeroes.formed;
+
         }
 
-        function mostrarHeroes(heroes){
+        function mostrarHeroes(){
+          let heroes = superHeroes.members;
             for (i = 0; i < heroes.length; i++){
                 let myArticle = document.createElement('article');
                 let myH2 = document.createElement('h2');
@@ -50,7 +68,7 @@
                 let myp1 = document.createElement('p');
                 let myp2 = document.createElement('p');
                 let myList = document.createElement('ul');
-
+                
                 myH2.textContent = heroes[i].name;
                 myp.textContent = 'Identidad Secreta: ' + heroes[i].secretIdentity;
                 myp1.textContent = 'Edad: ' + heroes[i].age;
@@ -61,6 +79,14 @@
                 myArticle.appendChild(myp1);
                 myArticle.appendChild(myp2);
                 myArticle.appendChild(myList);
+                
+                for (z=0; z < heroes[i].powers.length; z++ ){
+                  let myLi = document.createElement('li');
+                  myLi.textContent = heroes[i].powers[z];
+                  myList.appendChild(myLi);
+
+                }
+
                 section.appendChild(myArticle);
 
 

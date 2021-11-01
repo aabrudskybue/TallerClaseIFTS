@@ -1,0 +1,10 @@
+{
+    "productos":[{
+        "Nombre":"",
+        "Kilometraje":130000,
+        "Descripcion":"",
+        "Precio":345,
+        "destacado":true,
+        "imagen": "img/"
+    }]
+}

@@ -36,6 +36,15 @@
           "Teleportation",
           "Interdimensional travel"
         ]
+      },
+      {
+        "name": "Capitan piluso",
+        "age": 90,
+        "secretIdentity": "Maxi Bonnet",
+        "powers": [
+          "Super Boss",
+          "Poder Peronista"
+        ]
       }
     ]
   }

@@ -13,12 +13,14 @@
 
       <header></header>
 
-      <section></section>
+      <section>
+
+      </section>
 
     <script>
         const headerTitle = document.querySelector('header');
         const section = document.querySelector('section');
-        const requestURL = 'https://mdn.github.io/learning-area/javascript/oojs/json/superheroes.json';
+        const requestURL = 'doc.json';
         const request = new XMLHttpRequest(); //instancian objeto 
         request.open('GET', requestURL); // setean el método, la url de api
         request.responseType = 'json'; //definen el tipo de dato que les devuelve

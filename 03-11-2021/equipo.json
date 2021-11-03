@@ -1,0 +1,29 @@
+{
+    "pais": "Argentina",
+    "jugadores":[
+        {
+            "id": 1,
+            "nombre": "Leonel Messi",
+            "posicion": "Delantero",
+            "apodo": "pulga",
+            "edad": 34,
+            "numeroCamiseta": 10,
+            "piernaDominante":"zurdo",
+            "foto":"messi.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "Angel Dimaría",
+            "posicion": "Delantero",
+            "apodo": "fideo",
+            "edad": 33,
+            "numeroCamiseta": 9,
+            "piernaDominante":"diestro",
+            "foto":"dimaria.jpg"
+        }
+    ],
+    "dt" : "scaloni",
+    "cabeza_grupo" : true,
+    "grupo": "Grupo A",
+    "capitan": 1
+}

@@ -8,6 +8,19 @@ request.send();//envían la solicitud
 var equipo = '';
 
 console.log(request.response);
+
+
+$( document ).ready(function() { 
+
+    $('#addPlayer').submit(function(e){
+       e.preventDefault();
+        console.log("ENVIADO FORMULARIO")
+    })
+});
+
+function enviarForm(){
+    $('#addPlayer').submit();
+}
 request.onload = function (){ //esperan la respuesta
     console.log(request.response);
     equipo = request.response; //reciben la respuesta
@@ -31,7 +44,7 @@ function setTableGammers(){
     jugadores.forEach(element => {
 
         
-        let elementGalery = '<div class="col"><div class="card shadow-sm">';
+        let elementGalery = '<div class="col"><div class="card shadow-sm" id="card'+element.id+'">';
         elementGalery += '<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: Thumbnail" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>';
         elementGalery += '<div class="card-body">';
         elementGalery += '<p class="card-text"><b> NOMBRE: '+ element.nombre +' </b></p>';
@@ -41,6 +54,8 @@ function setTableGammers(){
         elementGalery += '<div class="d-flex justify-content-between align-items-center">';
         elementGalery += '<div class="btn-group">';
         elementGalery += '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="viewPlayer(\''+element+'\')">View</button>';
+        elementGalery += '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="showAlert('+element.id+', true)">Alert</button>';
+        elementGalery += '<button type="button" class="btn btn-sm btn-outline-secondary" onclick="showAlert('+element.id+', false)">remove Alert</button>';
         elementGalery += '</div><small class="text-muted">9 mins</small></div></div></div></div>';
         
         let gallery = document.getElementById('gallery_view');
@@ -61,4 +76,17 @@ function headerNav(){
 
 function viewPlayer(player){
     console.log(Object.values(player));
+}
+
+function showAlert(id, estado){
+    if (estado==true){
+        $('#card'+id).addClass('alert')
+    }else{
+
+        $('#card'+id).removeClass('alert')
+    }
+}
+
+function deletePlayer(id){
+    $('#card'+id).remove()
 }

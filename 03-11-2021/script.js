@@ -10,17 +10,6 @@ var equipo = '';
 console.log(request.response);
 
 
-$( document ).ready(function() { 
-
-    $('#addPlayer').submit(function(e){
-       e.preventDefault();
-        console.log("ENVIADO FORMULARIO")
-    })
-});
-
-function enviarForm(){
-    $('#addPlayer').submit();
-}
 request.onload = function (){ //esperan la respuesta
     console.log(request.response);
     equipo = request.response; //reciben la respuesta
@@ -39,6 +28,17 @@ function setDataTeams(){
 
 }
 
+$( document ).ready(function() { 
+
+    $('#addPlayer').submit(function(e){
+       e.preventDefault();
+        console.log("ENVIADO FORMULARIO")
+    })
+});
+
+function enviarForm(){
+    $('#addPlayer').submit();
+}
 function setTableGammers(){
     let jugadores = equipo.jugadores;
     jugadores.forEach(element => {
